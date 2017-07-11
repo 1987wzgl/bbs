@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="bbs-master:war exploded">
+    <output-path>C:/Program Files/Apache Software Foundation/apache-tomcat-7.0.63/webapps</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="bbs-master" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="bbs-master/web/Web" />
+    </root>
+  </artifact>
+</component>

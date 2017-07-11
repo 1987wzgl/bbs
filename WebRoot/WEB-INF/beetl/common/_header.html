@@ -1,0 +1,32 @@
+<div class="-navbar">
+    <div class="-navbar-inner">
+        <ul class="clearfix -nav">
+            <li class="pull-left"><a href="${base}/">首页</a></li>
+            <li class="pull-left">
+                <a href="${base}/topic/hot">浏览最多</a>
+            </li>
+            <li class="pull-left">
+                <a href="${base}/topic/nice">精华帖子</a>
+            </li>
+            <li class="pull-left">
+                <a href="${base}/topic/add">发表新话题</a>
+            </li>
+            <li class="pull-left">
+                <a href="${base}/leaveMsg" title="欢迎提出建议(●Ｕ_Ｕ●)">留言</a>
+            </li>
+            <form action="${base}/topic/search" method="post" id="search_form">
+                <div class="searchBox png" id="searchBox">
+                    <input type="text" name="topic.content" value="${topic.content!}" placeholder="请输入搜索内容....">
+                    <a href="javascript: $('#search_form').submit();"><img src="${base}/img/search.png"></a>
+                </div>
+            </form>
+
+            <!--<form>-->
+                <!--<input  type="text" style="margin-top: 8px;" placeholder="请输入检索内容……">-->
+                <!--<a style="display: inline-block;">search</a>-->
+            <!--</form>-->
+
+        </ul>
+    </div>
+
+</div>
