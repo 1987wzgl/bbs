@@ -14,17 +14,25 @@
             <li class="pull-left">
                 <a href="${base}/leaveMsg" title="欢迎提出建议(●Ｕ_Ｕ●)">留言</a>
             </li>
-            <form action="${base}/topic/search" method="post" id="search_form">
-                <div class="searchBox png" id="searchBox">
-                    <input type="text" name="topic.content" value="${topic.content!}" placeholder="请输入搜索内容....">
-                    <a href="javascript: $('#search_form').submit();"><img src="${base}/img/search.png"></a>
-                </div>
-            </form>
-
-            <!--<form>-->
-                <!--<input  type="text" style="margin-top: 8px;" placeholder="请输入检索内容……">-->
-                <!--<a style="display: inline-block;">search</a>-->
+            <!--<form action="${base}/topic/search" method="post" id="search_form">-->
+                <!--<div class="searchBox png" id="searchBox">-->
+                    <!--<input type="text" name="topic.content" value="${topic.content!}" placeholder="请输入搜索内容....">-->
+                    <!--<a href="javascript: $('#search_form').submit();"><img src="img/search.png"></a>-->
+                <!--</div>-->
             <!--</form>-->
+
+            <form action="${base}/topic/search" method="post" id="search_form">
+                <input  type="text" id="topic.content" name="topic.content" value="" placeholder="请输入检索内容……">
+                <a href="javascript: $('#search_form').submit();" style="display: inline-block;"><img src="${base}/img/search.png"></a>
+            </form>
+            <!--<script type="text/javascript">-->
+                <!--function show() {-->
+                    <!--var content = document.getElementsByName("topic.content");-->
+                    <!--if(content.value==" ") {-->
+                        <!--alert("请输入检索信息");-->
+                    <!--}-->
+                <!--}-->
+            <!--</script>-->
 
         </ul>
     </div>

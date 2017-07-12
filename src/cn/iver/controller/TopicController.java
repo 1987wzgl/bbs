@@ -28,6 +28,12 @@ public class TopicController extends Controller {
         setAttr("actionUrl", "/topic/nice/");
         render("/common/index.html");
     }
+    public void search(){
+        setAttr("topicPage",Topic.dao.getSearchpage(getPara("topic.content"),getParaToInt(0,1)));
+        setAttr("actionUrl","/topic/search/");
+        render("/common/index.html");
+    }
+
 
     @Before(LoginInterceptor.class)
     public void add(){

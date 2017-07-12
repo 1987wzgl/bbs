@@ -16,6 +16,7 @@ public class Topic extends Model<Topic>{
     private static final String HOT_TOPIC_PAGE_CACHE = "hotTopicPage";
     private static final String NICE_TOPIC_PAGE_CACHE = "niceTopicPage";
     private static final String TOPIC_PAGE_FOR_ADMIN_CACHE = "topicPageForAdmin";
+    private static final String SEARCH_PAGE_FOR_TOPIC_CACHE = "searchPageForTopic";
 
     public Topic(){
         super(TOPIC_CACHE);
@@ -57,6 +58,15 @@ public class Topic extends Model<Topic>{
                 pageNumber, Const.PAGE_SIZE_FOR_ADMIN,
                 "select id", "from topic order by createTime desc");
         return loadModelPage(topicPage);
+    }
+
+    public Page<Topic> getSearchpage(String searchStr,Integer pageNumber){
+        String cacheName = SEARCH_PAGE_FOR_TOPIC_CACHE;
+        Page<Topic> topicPage = dao.paginateByCache(cacheName,pageNumber,pageNumber,Const.TOPIC_PAGE_SIZE,
+                "select id","from topic where content like '%" +searchStr+"%' order by createTime desc");
+        removeThisCache();
+        removeAllPageCache();
+        return  loadModelPage(topicPage);
     }
 
     /* other */
@@ -109,11 +119,11 @@ public class Topic extends Model<Topic>{
         CacheKit.removeAll(HOT_TOPIC_PAGE_CACHE);
         CacheKit.removeAll(NICE_TOPIC_PAGE_CACHE);
         CacheKit.removeAll(TOPIC_PAGE_FOR_ADMIN_CACHE);
+        CacheKit.removeAll(SEARCH_PAGE_FOR_TOPIC_CACHE);
     }
 
     /* private */
     private void increaseTopicAttrInCache(int topicID, String attr) {
         CacheKit.put(TOPIC_CACHE, topicID, get(topicID).set(attr, get(topicID).getInt(attr) + 1));
     }
-
 }
