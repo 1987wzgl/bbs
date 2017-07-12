@@ -14,18 +14,31 @@
             <li class="pull-left">
                 <a href="${base}/leaveMsg" title="欢迎提出建议(●Ｕ_Ｕ●)">留言</a>
             </li>
-            <form action="${base}/topic/search" method="post" id="search_form">
-                <div class="searchBox png" id="searchBox">
-                    <input type="text" name="topic.content" value="${topic.content!}" placeholder="请输入搜索内容....">
-                    <a href="javascript: $('#search_form').submit();"><img src="${base}/img/search.png"></a>
-                </div>
-            </form>
-
-            <!--<form>-->
-                <!--<input  type="text" style="margin-top: 8px;" placeholder="请输入检索内容……">-->
-                <!--<a style="display: inline-block;">search</a>-->
+            <!--<form action="${base}/topic/search" method="post" id="search_form">-->
+                <!--<div class="searchBox png" id="searchBox">-->
+                    <!--<input type="text" name="topic.content" value="${topic.content!}" placeholder="请输入搜索内容....">-->
+                    <!--<a href="javascript: $('#search_form').submit();"><img src="img/search.png"></a>-->
+                <!--</div>-->
             <!--</form>-->
 
+            <form action="${base}/topic/search" method="post" id="search_form" name="search_form" >
+                <input  type="text" id="topic.content" name="topic.content" value="" placeholder="请输入检索内容……" onclick="return check()">
+                <a href="javascript: $('#search_form').submit();" style="display: inline-block;" ><img src="${base}/img/search.png"></a>
+            </form>
+            <script type="text/javascript">
+                function check() {
+                    var content = document.getElementById("topic.content");
+//                    var pattern = /[a-zA-Z0-9_\u4e00-\u9fa5]{0,16}/;
+                    var pattern = /[\w\u4e00-\u9fa5\s+]/;
+//                    if ((pattern.test(content.value)&&content.value== '')== false) {
+                    if (pattern.test(content.value)==false) {
+                        alert("请输入检索信息");
+                        document.getElementById("topic.content").focus();
+                    }
+                }
+            </script>
+
+            <!--pattern.test(content.value)-->
         </ul>
     </div>
 

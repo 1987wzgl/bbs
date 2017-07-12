@@ -19,7 +19,8 @@
 .-nav>li{ list-style: none; font-size: 18px; min-width: 30px; }
 .-nav a:hover{ font-weight: bold; background-color: #2aa4cf; }
 .-nav a{ font-weight: bold; padding: 0 20px; line-height: 45px; display: block;}
-.-nav input{line-height: 20px; width: 250px; }
+.-nav input{line-height: 20px; width: 250px; margin-top: 8px;}
+
 /* ====================== main ====================== */
 .-main{ margin: 0; width: 650px; min-height: 300px; }
 /* topic */

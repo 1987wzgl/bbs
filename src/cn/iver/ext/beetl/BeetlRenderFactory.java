@@ -12,8 +12,9 @@ public class BeetlRenderFactory implements IMainRenderFactory {
     public static String viewExtension = ".html";
     public static GroupTemplate gt = null;
 
+    //
     public BeetlRenderFactory(boolean isLocal) {
-        File file = new File(PathKit.getWebRootPath() + Const.BEETL_ROOT_DIR);
+        File file = new File(PathKit.getWebRootPath() + Const.BEETL_ROOT_DIR);//找到工程目录 D:\javaproject\bbs-master\out\WEB-INF\beetl
         gt = new GroupTemplate(file);
         if (isLocal){
             gt.enableChecker(2);

@@ -13,10 +13,6 @@ File Encoding         : 65001
 Date: 2015-03-22 19:23:46
 */
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`bbs` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `bbs`;
-
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -24,21 +20,21 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `module`;
 CREATE TABLE `module` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(20) DEFAULT NULL,
-  `detail` VARCHAR(100) DEFAULT NULL,
-  `turn` TINYINT(2) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `detail` varchar(100) DEFAULT NULL,
+  `turn` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=INNODB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of module
 -- ----------------------------
-INSERT INTO `module` VALUES ('1', '真实的故事 ⊙ω⊙', NULL, '1');
-INSERT INTO `module` VALUES ('2', '屌丝的逆袭 （┬＿┬）', NULL, '2');
-INSERT INTO `module` VALUES ('3', '屌丝的梦想 ⊙▽⊙', NULL, '3');
-INSERT INTO `module` VALUES ('4', '呵呵 <(￣︶￣)>', NULL, '4');
-INSERT INTO `module` VALUES ('5', '各种资讯 (^O^)', NULL, '5');
+INSERT INTO `module` VALUES ('1', '真实的故事 ⊙ω⊙', null, '1');
+INSERT INTO `module` VALUES ('2', '屌丝的逆袭 （┬＿┬）', null, '2');
+INSERT INTO `module` VALUES ('3', '屌丝的梦想 ⊙▽⊙', null, '3');
+INSERT INTO `module` VALUES ('4', '呵呵 <(￣︶￣)>', null, '4');
+INSERT INTO `module` VALUES ('5', '各种资讯 (^O^)', null, '5');
 INSERT INTO `module` VALUES ('6', '娱乐时刻 ( ^３^ )~~', null, '6');
 INSERT INTO `module` VALUES ('7', '那些年看过的电影 ●ω●', null, '7');
 

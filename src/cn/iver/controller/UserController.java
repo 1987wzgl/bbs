@@ -9,6 +9,9 @@ import cn.iver.validator.UpdateUserValidator;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class UserController extends Controller {
     public void index(){
         setAttr("user", User.dao.get(getParaToInt(0, 0)));

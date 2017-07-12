@@ -46,18 +46,12 @@ public class Config extends JFinalConfig {
     public void configPlugin(Plugins me) {
         String jdbcUrl, user, password;
         if (isLocal) {
-            jdbcUrl = Const.DEV_JDBC_URL;
-            user = Const.DEV_USER;
-            password = Const.DEV_PASSWORD;
+            jdbcUrl = Const.DEV_JDBC_URL;   user = Const.DEV_USER;      password = Const.DEV_PASSWORD;
         } else {
-            jdbcUrl = Const.JDBC_URL;
-            user = Const.USER;
-            password = Const.PASSWORD;
+            jdbcUrl = Const.JDBC_URL;       user = Const.USER;          password = Const.PASSWORD;
         }
         MysqlDataSource ds = new MysqlDataSource();
-        ds.setUrl(jdbcUrl);
-        ds.setUser(user);
-        ds.setPassword(password);
+        ds.setUrl(jdbcUrl);     ds.setUser(user);       ds.setPassword(password);
         ActiveRecordPlugin arp = new ActiveRecordPlugin(ds);
         if (isLocal) {
             arp.setShowSql(true);
@@ -86,10 +80,9 @@ public class Config extends JFinalConfig {
     /**
      * 初始化常量
      */
-    public void afterJFinalStart() {
-    }
+    public void afterJFinalStart() { }
 
-    private boolean isDevMode() {
+    private boolean isDevMode(){
         String osName = System.getProperty("os.name");
         return osName.indexOf("Windows") != -1;
     }

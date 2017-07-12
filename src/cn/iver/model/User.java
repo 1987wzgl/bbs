@@ -27,7 +27,7 @@ public class User extends Model<User> {
 
     /* other */
     public void mySave(){
-        this.filterText("username", "headImg", "blogUrl", "feeling");// 只有纯文本可以通过，属性赋值set（）
+        this.filterText("username", "headImg", "blogUrl", "feeling");
         String password = getMD5(this.getStr("password").getBytes());
 //        this.set("password", password).set("registDate", new Date());
         this.set("password", password).set("registDate",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
