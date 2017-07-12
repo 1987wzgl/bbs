@@ -22,21 +22,23 @@
             <!--</form>-->
 
             <form action="${base}/topic/search" method="post" id="search_form" name="search_form" >
-                <input  type="text" id="topic.content" name="topic.content" value="" placeholder="请输入检索内容……" onblur="return check()">
+                <input  type="text" id="topic.content" name="topic.content" value="" placeholder="请输入检索内容……" onclick="return check()">
                 <a href="javascript: $('#search_form').submit();" style="display: inline-block;" ><img src="${base}/img/search.png"></a>
             </form>
             <script type="text/javascript">
                 function check() {
                     var content = document.getElementById("topic.content");
-                    var str = /[a-zA-Z0-9_\u4e00-\u9fa5]{2,8}/;
-                    if (content.value.test(str)) {
+//                    var pattern = /[a-zA-Z0-9_\u4e00-\u9fa5]{0,16}/;
+                    var pattern = /[\w\u4e00-\u9fa5\s+]/;
+//                    if ((pattern.test(content.value)&&content.value== '')== false) {
+                    if (pattern.test(content.value)==false) {
                         alert("请输入检索信息");
                         document.getElementById("topic.content").focus();
                     }
                 }
             </script>
 
-
+            <!--pattern.test(content.value)-->
         </ul>
     </div>
 
