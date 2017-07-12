@@ -63,7 +63,7 @@ public class Topic extends Model<Topic>{
     public Page<Topic> getSearchpage(String searchStr,Integer pageNumber){
         String cacheName = SEARCH_PAGE_FOR_TOPIC_CACHE;
         Page<Topic> topicPage = dao.paginateByCache(cacheName,pageNumber,pageNumber,Const.TOPIC_PAGE_SIZE,
-                "select id","from topic where content like '%" +searchStr+"%' order by createTime desc");
+                "select id","from topic where content like '%" +searchStr.trim()+"%' order by createTime desc");
         removeThisCache();
         removeAllPageCache();
         return  loadModelPage(topicPage);
